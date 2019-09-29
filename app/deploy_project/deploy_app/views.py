@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def hello(request):
-   text = """<h1>welcome to my app !</h1>"""
-   return HttpResponse(text)
+def index(request):
+
+   firstapptext = "Hi! "
+   context = {'firstapptext': firstapptext  } 
+
+   return render(request, 'index.html', context)
