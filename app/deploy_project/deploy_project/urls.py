@@ -20,4 +20,5 @@ from deploy_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('bikelist', views.form, name="form"),
 ]
