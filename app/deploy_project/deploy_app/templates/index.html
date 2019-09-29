@@ -14,8 +14,15 @@
 
 	<body>
         <div>
+			List:
+          <ol> 
+			  {% for field in qwertyset %}
+			  <li>
+				  {{ field.brand }}
+			  </li>
+			  {% endfor %}
+		  </ol>
 
-			
 		</div>
 
 
