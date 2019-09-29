@@ -12,5 +12,6 @@ def index(request):
    return render(request, 'index.html', context)
 
 def form(request):
-   form=bike_form()
+   form=bike_form(request.POST)
+  
    return render(request, 'bikeform.html', {"form":form})
