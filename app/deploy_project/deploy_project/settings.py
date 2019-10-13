@@ -76,11 +76,12 @@ WSGI_APPLICATION = 'deploy_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'deploy',
-        'USER': 'www',
-        'PASSWORD': '$3cureUS',
-        'HOST': 'db',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
