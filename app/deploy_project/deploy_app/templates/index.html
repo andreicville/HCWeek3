@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bike store</title>
-
+		<h1> Bike Store </h1> 
 
 	
 	</head>
@@ -15,18 +15,16 @@
         <div>
 			List:
           <ol> 
-			  {% for field in qwertyset %}
+			  {% for field in queryset %}
 			  <li>
-				  {{ field.brand }}
-			  </li>
-			  <li>
-					{{ field.model }}
-				</li>
+				  {{ field.brand }}, {{ field.model }}, {{ field.category }}, {{ field.frame_size }}, Used: {{ field.used }}
+			  </li>	
 			  {% endfor %}
 		  </ol>
 
 		</div>
-
-
+		<div> 
+			<a href="{% url 'deploy_project:bikeform' %}">Add Bike</a>
+		</div>
 	</body>
 </html>
