@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block header_title %} | Parts available{% endblock %}
+
+{% block body_content %}
+        <div>
+			List of Parts:
+          <ol> 
+			  {% for field in queryset %}
+			  <li>
+				  {{ field.title }}, {{ field.part_type }}, {{ field.brand }}, {{ field.bike_model }}, Used: {{ field.used }}
+			  </li>	
+			  {% endfor %}
+		  </ol>
+
+		</div>
+		<div> 
+			<a href="{% url 'deploy_project:partform' %}">Add new Part</a>
+		</div>
+		{% endblock %}

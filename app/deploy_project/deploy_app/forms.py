@@ -1,18 +1,16 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Bikes
+from .models import Bikes, Parts, Accessories
 
 class bike_form(ModelForm):
     class Meta: 
         model = Bikes
         fields = ['brand', 'model', 'category','frame_size', 'used']
-        #th_brand = forms.CharField(label="Bike brand",max_length = 50)
-        #th_model= forms.CharField(label="Bike model",max_length = 50)
-        #th_category = forms.CharField(label="Bike category",max_length = 50)
-        #th_frame_size = forms.IntegerField(label="Bike frame size")
-        #th_used = forms.BooleanField()
-
-    # brand = models.CharField(max_length=50)
-    # category = models.CharField(max_length=50)      # road bike, mountain, city(hybrid), 
-    # frame_size = models.PositiveIntegerField()
-    # used = models.BooleanField(default = False)
+class part_form(ModelForm):
+    class Meta: 
+        model = Parts
+        fields = ['title', 'part_type', 'brand','bike_model', 'used']
+class accessory_form(ModelForm):
+    class Meta: 
+        model = Accessories
+        fields = ['title', 'accessory_type', 'brand','bike_model', 'part_model']

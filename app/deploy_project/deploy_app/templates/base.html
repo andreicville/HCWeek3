@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deploy{% block header_title %}{% endblock %}</title>
+  </head>
+   
+  <body>
+<div id="header" style="">
+    <table height="150px" width="100%" style="text-align:center">
+<tr>
+  <td width="25%">
+    <a href="/">Bike list</a>
+  </td>
+  <td width="25%">
+   <p><a href="{% url 'parts' %}">Parts</a></p>
+   <a href="{% url 'deploy_project:partform' %}">Add new part</a>
+  </td>
+  <td width="25%">
+   <p><a href="{% url 'accessories'  %}">Accessories</a></p>
+   <a href="{% url 'deploy_project:accessoryform' %}">Add new accessory</a>
+  </td>
+  <td>
+      <a href="{% url 'deploy_project:bikeform' %}">Add Bike</a>
+  </td>
+</tr>
+
+     </table> 
+
+     <div id="welcome" style="text-align:center; width:100%">
+       <p> <b>Welcome to Bike Shop!</b></p>
+     </div>
+</div>
+<div id="body" style="padding: 25px">
+
+    {% block body_content %}{% endblock %}
+  </div>
+    <hr>
+    <div id="footer" style="width:100%; background-color:gray; height: 200px;" >
+      <div class="address" style="width: 50%; float: left; text-align: center; padding: 35px;">
+        <b>Blue Wheel Bicycles</b>
+        <p>941 2nd St. SE
+        Charlottesville, VA 22902
+      </p>
+        <div class="phone">(434) 977-1870</div>
+      </div>
+      <div class="directions" style="text-align: center; padding: 35px;">
+        <b>Directions</b>
+        <p>Hours</p>
+        <p>Mon - Fri: 10:00am - 6:00pm
+        Sat: 10:00am - 5:00pm
+        Sun: Closed</p>
+      
+      </div>
+    </div>
+  
+  </body>
+  
+  <script>
+    console.log('Doing creepy tracking stuff here.');
+    const { pathname } = window.location;
+    const { language, platform, userAgent } = window.navigator;
+    const data = { pathname, language, platform, userAgent, location };
+    window.navigator.geolocation.getCurrentPosition(location => {
+      data.location = {
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      };
+    });
+    
+    console.log(data);
+    fetch('/log', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  </script>
+</html>

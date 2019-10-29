@@ -26,9 +26,9 @@ class Parts(models.Model):
     def __str__(self):
         return self.title
 
-class Accesories(models.Model):
+class Accessories(models.Model):
     title = models.CharField(max_length=50) 
-    type = models.CharField(max_length=50) 
+    accessory_type = models.CharField(max_length=50) 
     brand = models.CharField(max_length=50) 
     bike_model = models.ManyToManyField(Bikes) 
     part_model = models.ManyToManyField(Parts) 

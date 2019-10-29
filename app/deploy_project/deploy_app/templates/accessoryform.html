@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
-{% block header_title %} | Add bike to the store{% endblock %}
+{% block header_title %} | Add Accessory to the store{% endblock %}
 
 {% block body_content %}
+
         <div>
-            Add new Bike
+            Add new Accessory
             <form method = "POST" >
 				{% csrf_token %}
 				{{ form }}

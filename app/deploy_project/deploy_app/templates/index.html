@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bike store</title>
-		<h1> Bike Store </h1> 
+{% extends "base.html" %}
 
-	
-	</head>
+{% block header_title %} | Bike store{% endblock %}
 
-
-	<body>
+{% block body_content %}
         <div>
-			List:
+			List of Bikes:
           <ol> 
 			  {% for field in queryset %}
 			  <li>
-				  {{ field.brand }}, {{ field.model }}, {{ field.category }}, {{ field.frame_size }}, Used: {{ field.used }}
+				  <b>Brand: </b>{{ field.brand }}, <b>Model:</b> {{ field.model }}, <b>Category:</b> {{ field.category }}, <b>Size: </b>{{ field.frame_size }}, <b>Used:</b> {{ field.used }}
 			  </li>	
 			  {% endfor %}
 		  </ol>
 
 		</div>
-		<div> 
-			<a href="{% url 'deploy_project:bikeform' %}">Add Bike</a>
-		</div>
-	</body>
-</html>
+		
+		{% endblock %}

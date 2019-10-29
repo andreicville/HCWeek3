@@ -21,5 +21,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name = "home" ),
+    #path('<int:model>/', views.bikeid, name='bikeid'),
+    path('parts', views.parts, name = "parts" ),
+    path('accessories', views.accessories, name = "accessories" ),
     path('bikes/', include('deploy_app.urls')),
+    path('log', views.log)
 ]

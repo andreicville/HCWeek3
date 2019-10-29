@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block header_title %} | Accessories available{% endblock %}
+
+{% block body_content %}
+        <div>
+			List of Accessories:
+          <ol> 
+			  {% for field in queryset %}
+			  <li>
+				  {{ field.title }}, {{ field.accessory_type }}, {{ field.brand }}, {{ field.bike_model }}, {{ field.part_model }}
+			  </li>	
+			  {% endfor %}
+		  </ol>
+
+		</div>
+		<div> 
+			<a href="{% url 'deploy_project:accessoryform' %}">Add new Accessory</a>
+		</div>
+		{% endblock %}
