@@ -8,7 +8,14 @@
           <ol> 
 			  {% for field in queryset %}
 			  <li>
-				  {{ field.title }}, {{ field.accessory_type }}, {{ field.brand }}, {{ field.bike_model }}, {{ field.part_model }}
+				  {{ field.title }}, {{ field.accessory_type }}, {{ field.brand }}, 
+				  {% for bmodel in field.bike_model.all %}
+				     {{ bmodel }}
+				  {% endfor %}
+				  , 
+				  {% for pmodel in field.part_model.all %}
+					{{ pmodel }}
+				  {% endfor %}
 			  </li>	
 			  {% endfor %}
 		  </ol>

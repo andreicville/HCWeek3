@@ -18,7 +18,7 @@ def parts(request):
    return render(request, 'parts.html', context)
 
 def accessories(request):
-   queryset = Bikes.objects.all()
+   queryset = Accessories.objects.all()
    context = {'queryset': queryset  } 
    return render(request, 'accessories.html', context)
 
@@ -37,7 +37,7 @@ def partform(request):
       form=part_form(request.POST)
       if form.is_valid(): 
          form.save()
-         return redirect('partform')
+         return redirect('parts')
    else: 
       form = part_form()
    return render(request, 'partform.html', {"form":form})
@@ -47,7 +47,7 @@ def accessoryform(request):
       form=accessory_form(request.POST)
       if form.is_valid(): 
          form.save()
-         return redirect('accessoryform')
+         return redirect('accessories')
    else: 
       form = accessory_form()
    return render(request, 'accessoryform.html', {"form":form})
