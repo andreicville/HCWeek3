@@ -11,8 +11,8 @@ class Bikes(models.Model):
     def __str__(self):
         return self.model
    
-class Brand(models.Model):
-    title = models.CharField(max_length=50)
+class Brands(models.Model):
+    title = models.CharField(max_length=50, default = "Brand Title Default")
     country = models.CharField(max_length=50)
     def __str__(self):
         return self.title

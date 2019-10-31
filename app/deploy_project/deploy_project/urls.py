@@ -19,11 +19,17 @@ from deploy_app import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', views.index, name = "home" ),
-    #path('<int:model>/', views.bikeid, name='bikeid'),
+    
     path('parts', views.parts, name = "parts" ),
     path('accessories', views.accessories, name = "accessories" ),
-    path('bikes/', include('deploy_app.urls')),
+    path('brands', views.brands, name = "brands" ),
+    path('add_bike', views.bikeform, name="bikeform"),
+    path('add_parts', views.partform, name="partform"),
+    path('add_accessories', views.accessoryform, name="accessoryform"),
+    path('add_brands', views.brandform, name="brandform"),
     path('log', views.log)
+
+    #path('bikes/<bikemodel>', views.singlebikepage, name='singlebikepage'),
 ]

@@ -3,7 +3,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from deploy_app import views
 from urllib.parse import urlencode
-from models import Bikes, Brand, Parts, Accesories
+from .models import Bikes, Brand, Parts, Accessories
 from django.core.management import call_command
 
 class test_user(TestCase):

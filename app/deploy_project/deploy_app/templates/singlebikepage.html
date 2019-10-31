@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header_title %} | Bike store{% endblock %}
+
+{% block body_content %}
+        <div>
+			List of Bikes:
+          <ol> 
+			  
+			  <li>
+				  <b>Our Single Bike: </b>{{ singlebike.brand }}, <b>Model:</b> {{ singlebike.model }}, <b>Category:</b> {{ singlebike.category }}, <b>Size: </b>{{ singlebike.frame_size }}, <b>Used:</b> {{ singlebike.used }}
+			  </li>	
+			 
+		  </ol>
+
+		</div>
+		
+		{% endblock %}

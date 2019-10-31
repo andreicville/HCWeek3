@@ -3,7 +3,7 @@
     <head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=100%, initial-scale=1">
     <title>Deploy{% block header_title %}{% endblock %}</title>
   </head>
    
@@ -12,18 +12,20 @@
     <table height="150px" width="100%" style="text-align:center">
 <tr>
   <td width="25%">
-    <a href="/">Bike list</a>
+    <p><a href="/">Bike list - HOME</a></p>
+    <a href="{% url 'bikeform' %}">Add Bike</a>
   </td>
   <td width="25%">
    <p><a href="{% url 'parts' %}">Parts</a></p>
-   <a href="{% url 'deploy_project:partform' %}">Add new part</a>
+   <a href="{% url 'partform' %}">Add new part</a>
   </td>
   <td width="25%">
    <p><a href="{% url 'accessories'  %}">Accessories</a></p>
-   <a href="{% url 'deploy_project:accessoryform' %}">Add new accessory</a>
+   <a href="{% url 'accessoryform' %}">Add new accessory</a>
   </td>
   <td>
-      <a href="{% url 'deploy_project:bikeform' %}">Add Bike</a>
+      <p><a href="{% url 'brands'  %}">Brands</a></p>
+   <a href="{% url 'brandform' %}">Add new brand</a> 
   </td>
 </tr>
 

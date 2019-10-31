@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block header_title %} | Add Brand to the store{% endblock %}
+
+{% block body_content %}
+
+        <div>
+            Add new Brand
+            <form method = "POST" >
+				{% csrf_token %}
+				{{ form }}
+                <button type="submit">Submit</button>
+            </form>
+		</div>
+		{% endblock %}

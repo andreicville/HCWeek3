@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block header_title %} | Brands available{% endblock %}
+
+{% block body_content %}
+        <div>
+			List of Brands:
+          <ol> 
+			  {% for field in queryset %}
+			  <li>
+					 {{ field.title }}
+				
+					, {{ field.country }}
+				 
+			  </li>	
+			  {% endfor %}
+		  </ol>
+
+		</div>
+		<div> 
+			<a href="{% url 'brandform' %}">Add new Brand</a>
+		</div>
+		{% endblock %}

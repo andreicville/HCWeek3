@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Bikes, Parts, Accessories
+from .models import Bikes, Parts, Accessories, Brands
 
 class bike_form(ModelForm):
     class Meta: 
@@ -14,3 +14,8 @@ class accessory_form(ModelForm):
     class Meta: 
         model = Accessories
         fields = ['title', 'accessory_type', 'brand','bike_model', 'part_model']
+class brand_form(ModelForm):
+    class Meta: 
+        model = Brands
+        fields = ['title', 'country']
+        
